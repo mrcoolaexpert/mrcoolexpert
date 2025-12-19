@@ -149,13 +149,20 @@ const Index = () => {
                   </div>
                 </div>
               </div>
+              {/* ... inside your Hero Section in Index.tsx ... */}
+
               <div className="flex-1 animate-fade-in-up delay-100">
                 <div className="relative">
                   <div className="absolute -inset-4 bg-accent/20 rounded-full blur-3xl opacity-50" />
                   <img
                     src={logo}
-                    alt="AC Service Technician"
-                    className="relative w-full max-w-lg mx-auto rounded-3xl shadow-2xl border-4 border-white/50"
+                    alt="Mr. Cool Service Technician"
+                    /* Explicit width/height prevents Layout Shift (CLS) */
+                    width="500"
+                    height="500"
+                    /* Fetch Priority High helps LCP (Largest Contentful Paint) */
+                    fetchPriority="high"
+                    className="relative w-full max-w-lg mx-auto rounded-3xl shadow-2xl border-4 border-white/50 bg-white object-cover aspect-square"
                   />
                 </div>
               </div>
