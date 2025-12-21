@@ -78,13 +78,13 @@ export const LocalBusinessSchema = () => {
     const schema = {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "@id": "https://mrcoolservice.com",
+      "@id": "https://mrcoolservice.in",
       "name": "Mr. Cool Service",
       "alternateName": "Mr. Cool AC Service Tiruppur",
       "description": "Professional AC installation, repair, and maintenance services in Tiruppur, Avinashi, Palladam and surrounding areas within 15km radius.",
-      "url": "https://mrcoolservice.com",
-      "telephone": "+919842365480",
-      "email": "mrcoolservicetiruppur@gmail.com",
+      "url": "https://mrcoolservice.in",
+      "telephone": "+918220915207",
+      "email": "mrcoolacexpert@gmail.com",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Tiruppur",

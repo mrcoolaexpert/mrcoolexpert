@@ -177,13 +177,13 @@ const Footer = () => {
                     24/7 Helpline
                   </p>
                   <p className="font-bold text-primary-foreground tracking-wide">
-                    +91 98423 65480
+                    +91 82209 15207
                   </p>
                 </div>
               </a>
 
               <a
-                href="https://wa.me/919842365480"
+                href="https://wa.me/918220915207"
                 className="flex items-start gap-4 p-3 rounded-lg bg-primary-foreground/5 hover:bg-primary-foreground/10 transition-colors group"
               >
                 <MessageCircle className="w-5 h-5 text-green-400 group-hover:scale-110 transition-transform" />

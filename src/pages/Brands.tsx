@@ -330,7 +330,7 @@ const Brands = () => {
               carrying the right tools.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a href="tel:+919842365480">
+              <a href="tel:+918220915207">
                 <Button
                   size="lg"
                   className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold"

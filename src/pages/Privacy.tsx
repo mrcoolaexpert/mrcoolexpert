@@ -94,8 +94,8 @@ const Privacy = () => {
                   </p>
                   <div className="mt-4 text-muted-foreground">
                     <p><strong>Mr. Cool Service</strong></p>
-                    <p>Phone: +91 98423 65480</p>
-                    <p>Email: mrcoolservicetiruppur@gmail.com</p>
+                    <p>Phone: +91 82209 15207</p>
+                    <p>Email: mrcoolacexpert@gmail.com</p>
                     <p>Location: Tiruppur, Tamil Nadu</p>
                   </div>
                 </div>

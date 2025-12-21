@@ -344,7 +344,7 @@ const About = () => {
                   className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-14 px-8 shadow-xl"
                 >
                   <Phone className="w-5 h-5 mr-2" />
-                  Call +91 98423 65480
+                  Call +91 82209 15207
                 </Button>
               </a>
               <Link to="/contact">

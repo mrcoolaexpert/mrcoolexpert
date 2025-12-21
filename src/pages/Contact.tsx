@@ -128,7 +128,7 @@ Please confirm the slot availability.`;
                           24/7 Helpline
                         </p>
                         <h3 className="text-2xl font-bold text-foreground">
-                          +91 98423 65480
+                          +91 82209 15207
                         </h3>
                       </div>
                     </CardContent>
@@ -137,7 +137,7 @@ Please confirm the slot availability.`;
 
                 {/* WhatsApp Card */}
                 <a
-                  href="https://wa.me/919842365480"
+                  href="https://wa.me/918220915207"
                   target="_blank"
                   rel="noreferrer noopener"
                   className="block group"
@@ -161,7 +161,7 @@ Please confirm the slot availability.`;
 
                 {/* Email Card */}
                 <a
-                  href="mailto:mrcoolservicetiruppur@gmail.com"
+                  href="mailto:mrcoolacexpert@gmail.com"
                   className="block group"
                 >
                   <Card className="border-border/60 shadow-sm hover:shadow-md transition-all hover:border-blue-500/50 cursor-pointer bg-white">
@@ -174,7 +174,7 @@ Please confirm the slot availability.`;
                           Email Support
                         </p>
                         <h3 className="text-lg font-bold text-foreground truncate max-w-[200px]">
-                          mrcoolservicetiruppur@gmail.com
+                          mrcoolacexpert@gmail.com
                         </h3>
                       </div>
                     </CardContent>

@@ -27,7 +27,7 @@ const Header = () => {
           <div className="flex items-center gap-4">
             <a href="tel:+919842365480" className="flex items-center gap-1 hover:text-secondary transition-colors">
               <Phone className="w-4 h-4" />
-              +91 98423 65480
+              +91 82209 15207
             </a>
             <span className="flex items-center gap-1">
               <MapPin className="w-4 h-4" />

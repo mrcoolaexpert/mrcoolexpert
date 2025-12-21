@@ -388,7 +388,7 @@ const Services = () => {
               Talk to our senior technician for a free phone consultation.
             </p>
             <div className="flex justify-center gap-4">
-              <a href="tel:+919842365480">
+              <a href="tel:+918220915207">
                 <Button
                   size="lg"
                   className="bg-primary hover:bg-primary/90 text-white font-bold h-12 px-8 shadow-xl"
