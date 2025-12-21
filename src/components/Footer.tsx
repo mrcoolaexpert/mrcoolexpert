@@ -178,7 +178,7 @@ const Footer = () => {
               {/* FIX: Replaced broken "goo.gl" link with a direct Google Maps Search Link */}
               {/* FIX: THIS IS THE CORRECT, CRAWLABLE GOOGLE MAPS LINK */}
               <a
-                href="https://www.google.com/maps/search/?api=1&query=Mr.+Cool+Service+Kumarasamy+Colony+Kangeyam"
+                href="https://www.google.com/maps/search/?api=1&query=Cross+rode+Ctc,+3rd+St,+Kumarasamy+Colony,+Kangeyam,+Tiruppur,+Tamil+Nadu+641604"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start gap-4 p-3 rounded-lg bg-primary-foreground/5 hover:bg-primary-foreground/10 transition-colors group"
