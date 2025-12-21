@@ -9,7 +9,6 @@ import {
   ShieldCheck,
   Star,
 } from "lucide-react";
-import logo from "@/assets/mrcool-logo.jpeg";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -21,27 +20,27 @@ const Footer = () => {
         <div className="container mx-auto px-4 flex flex-wrap justify-center md:justify-between items-center gap-4 text-xs font-medium text-primary-foreground/80">
           <div className="flex items-center gap-2">
             <ShieldCheck className="w-4 h-4 text-accent" />
-            <span>30-Day Service Warranty</span>
+            <span>90-Day Service Warranty</span>
           </div>
           <div className="flex items-center gap-2">
             <Star className="w-4 h-4 text-yellow-400 fill-current" />
-            <span>4.9/5 Rated on Google</span>
+            <span>#1 Rated AC Service</span>
           </div>
           <div className="flex items-center gap-2">
             <Clock className="w-4 h-4 text-blue-300" />
-            <span>60-Minute Rapid Response</span>
+            <span>Open 24 Hours</span>
           </div>
         </div>
       </div>
 
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
-          {/* Brand Column (Span 4) */}
+          {/* Brand Column */}
           <div className="lg:col-span-4 space-y-6">
             <div className="flex items-center gap-4">
               <img
-                src={logo}
-                alt="Mr. Cool Service Logo"
+                src="/mrcool-logo.webp"
+                alt="Mr. Cool Service - Kangeyam"
                 className="w-16 h-16 rounded-xl object-cover border-2 border-primary-foreground/10"
               />
               <div>
@@ -49,17 +48,15 @@ const Footer = () => {
                   Mr. Cool Service
                 </h3>
                 <p className="text-sm text-primary-foreground/70">
-                  Tiruppur's #1 Appliance Experts
+                  Kangeyam & Tiruppur Experts
                 </p>
               </div>
             </div>
             <p className="text-sm text-primary-foreground/80 leading-relaxed pr-4">
-              We are a registered home appliance service company specializing in
-              advanced diagnostics for Inverter ACs, Front-load Washing
-              Machines, and Frost-free Refrigerators.
+              Registered home appliance service center in Kumarasamy Colony.
+              Specializing in Inverter ACs, Washing Machines, and Refrigerators.
             </p>
             <div className="flex gap-4">
-              {/* Social Icons - Fixed Accessibility Errors */}
               <a
                 href="#"
                 aria-label="Facebook"
@@ -77,7 +74,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Services Column (Span 3) */}
+          {/* Services Column */}
           <div className="lg:col-span-3 space-y-6">
             <h4 className="text-lg font-bold text-primary-foreground border-l-4 border-accent pl-3">
               Our Expertise
@@ -104,23 +101,7 @@ const Footer = () => {
                   to="/services"
                   className="hover:text-accent transition-colors flex items-center gap-2"
                 >
-                  <span>›</span> Refrigerator/Fridge Repair
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/services"
-                  className="hover:text-accent transition-colors flex items-center gap-2"
-                >
-                  <span>›</span> Inverter PCB Chip Level Fix
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/services"
-                  className="hover:text-accent transition-colors flex items-center gap-2"
-                >
-                  <span>›</span> Deep Jet-Pump Cleaning
+                  <span>›</span> Refrigerator Repair
                 </Link>
               </li>
               <li>
@@ -128,23 +109,26 @@ const Footer = () => {
                   to="/brands"
                   className="hover:text-accent transition-colors flex items-center gap-2"
                 >
-                  <span>›</span> Multi-Brand Annual Maintenance
+                  <span>›</span> Multi-Brand Support
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Service Areas (Span 2) */}
+          {/* Service Areas */}
           <div className="lg:col-span-2 space-y-6">
             <h4 className="text-lg font-bold text-primary-foreground border-l-4 border-accent pl-3">
               Service Areas
             </h4>
             <ul className="space-y-3 text-sm text-primary-foreground/70">
               <li className="flex items-center gap-2">
-                <MapPin className="w-3 h-3 text-accent" /> Tiruppur North
+                <MapPin className="w-3 h-3 text-accent" /> Kangeyam
               </li>
               <li className="flex items-center gap-2">
-                <MapPin className="w-3 h-3 text-accent" /> Tiruppur South
+                <MapPin className="w-3 h-3 text-accent" /> Kumarasamy Colony
+              </li>
+              <li className="flex items-center gap-2">
+                <MapPin className="w-3 h-3 text-accent" /> Tiruppur
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="w-3 h-3 text-accent" /> Avinashi
@@ -152,23 +136,17 @@ const Footer = () => {
               <li className="flex items-center gap-2">
                 <MapPin className="w-3 h-3 text-accent" /> Palladam
               </li>
-              <li className="flex items-center gap-2">
-                <MapPin className="w-3 h-3 text-accent" /> Kangeyam
-              </li>
-              <li className="flex items-center gap-2">
-                <MapPin className="w-3 h-3 text-accent" /> Uthukuli
-              </li>
             </ul>
           </div>
 
-          {/* Contact Column (Span 3) */}
+          {/* Contact Column */}
           <div className="lg:col-span-3 space-y-6">
             <h4 className="text-lg font-bold text-primary-foreground border-l-4 border-accent pl-3">
-              Get in Touch
+              Contact Us
             </h4>
             <div className="space-y-4">
               <a
-                href="tel:+919842365480"
+                href="tel:+918220915207"
                 className="flex items-start gap-4 p-3 rounded-lg bg-primary-foreground/5 hover:bg-primary-foreground/10 transition-colors group"
               >
                 <Phone className="w-5 h-5 text-accent group-hover:scale-110 transition-transform" />
@@ -197,8 +175,9 @@ const Footer = () => {
                 </div>
               </a>
 
+              {/* FIX: Replaced broken "goo.gl" link with a direct Google Maps Search Link */}
               <a
-                href="https://share.google/cXDduDUaPPbm0pi2w"
+                href="https://www.google.com/maps/search/?api=1&query=Cross+rode+Ctc,+3rd+St,+Kumarasamy+Colony,+Kangeyam,+Tiruppur,+Tamil+Nadu+641604"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start gap-4 p-3 rounded-lg bg-primary-foreground/5 hover:bg-primary-foreground/10 transition-colors group"
@@ -209,9 +188,11 @@ const Footer = () => {
                     Head Office
                   </p>
                   <p className="text-sm text-primary-foreground leading-tight">
-                    Near New Bus Stand,
+                    Cross rode Ctc, 3rd St,
                     <br />
-                    Tiruppur, Tamil Nadu
+                    Kumarasamy Colony,
+                    <br />
+                    Kangeyam - 641604
                   </p>
                 </div>
               </a>
@@ -223,13 +204,16 @@ const Footer = () => {
       {/* Bottom Copyright */}
       <div className="bg-primary-foreground/5 py-6 border-t border-primary-foreground/10">
         <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-primary-foreground/60">
-          <p>© {currentYear} Mr. Cool Service. Registered Entity.</p>
+          <p>© {currentYear} Mr. Cool Service. All rights reserved.</p>
           <div className="flex gap-6">
-            <Link to="/privacy" className="hover:text-accent transition-colors">
-              Privacy Policy
+            <Link
+              to="/services"
+              className="hover:text-accent transition-colors"
+            >
+              AC Service Near Me
             </Link>
             <Link to="/contact" className="hover:text-accent transition-colors">
-              Terms of Service
+              Book Appointment
             </Link>
             <Link
               to="/sitemap.xml"

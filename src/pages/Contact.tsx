@@ -53,7 +53,7 @@ Please confirm the slot availability.`;
 
     // Open WhatsApp
     window.open(
-      `https://wa.me/919842365480?text=${encodeURIComponent(whatsappMessage)}`,
+      `https://wa.me/918220915207?text=${encodeURIComponent(whatsappMessage)}`,
       "_blank"
     );
 
@@ -79,9 +79,9 @@ Please confirm the slot availability.`;
   return (
     <>
       <SEO
-        title="Contact Mr. Cool Service | Book AC Repair in Tiruppur"
-        description="Schedule a visit for AC Service, Washing Machine Repair, or Fridge Maintenance in Tiruppur. Call +91 98423 65480. We serve Avinashi, Palladam, and Kangeyam."
-        keywords="Mr Cool Service phone number, AC mechanic number Tiruppur, washing machine service contact, fridge repair near me"
+        title="Contact Mr. Cool Service | 24/7 AC Repair in Tiruppur"
+        description="Visit our service center at Kumarasamy Colony, Kangeyam. Call +91 82209 15207 for 24/7 AC, Washing Machine & Fridge repair."
+        keywords="Mr Cool Service address, AC mechanic Kumarasamy Colony, Kangeyam AC repair, washing machine service Tiruppur"
       />
       <Header />
       <FloatingButtons />
@@ -97,14 +97,14 @@ Please confirm the slot availability.`;
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                 </span>
-                Available Now • Response time less than 15 mins
+                Open 24 Hours • 30 Min Response Time
               </span>
               <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6">
                 Let's Fix Your Appliance
               </h1>
               <p className="text-lg text-muted-foreground">
-                Don't let a broken AC ruin your day. Fill out the form below or
-                give us a call, and our mobile unit will be on the way.
+                Located in Kumarasamy Colony. We provide doorstep service across
+                Kangeyam & Tiruppur.
               </p>
             </div>
           </div>
@@ -117,7 +117,7 @@ Please confirm the slot availability.`;
               {/* Left Column: Contact Cards */}
               <div className="lg:col-span-5 space-y-6">
                 {/* Phone Card */}
-                <a href="tel:+919842365480" className="block group">
+                <a href="tel:+918220915207" className="block group">
                   <Card className="border-border/60 shadow-sm hover:shadow-md transition-all hover:border-primary/50 cursor-pointer bg-white">
                     <CardContent className="p-6 flex items-center gap-5">
                       <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
@@ -159,28 +159,6 @@ Please confirm the slot availability.`;
                   </Card>
                 </a>
 
-                {/* Email Card */}
-                <a
-                  href="mailto:mrcoolacexpert@gmail.com"
-                  className="block group"
-                >
-                  <Card className="border-border/60 shadow-sm hover:shadow-md transition-all hover:border-blue-500/50 cursor-pointer bg-white">
-                    <CardContent className="p-6 flex items-center gap-5">
-                      <div className="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 group-hover:bg-blue-500 group-hover:text-white transition-colors">
-                        <Mail className="w-7 h-7" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-medium text-muted-foreground">
-                          Email Support
-                        </p>
-                        <h3 className="text-lg font-bold text-foreground truncate max-w-[200px]">
-                          mrcoolacexpert@gmail.com
-                        </h3>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </a>
-
                 {/* Address Info */}
                 <div className="bg-slate-900 text-slate-100 rounded-3xl p-8 mt-8">
                   <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
@@ -192,10 +170,11 @@ Please confirm the slot availability.`;
                       <div>
                         <p className="font-semibold">Headquarters</p>
                         <p className="text-slate-400 text-sm leading-relaxed">
-                          Tiruppur, Tamil Nadu.
+                          Cross rode Ctc, 3rd St,
                           <br />
-                          (Mobile teams available in Avinashi, Palladam, &
-                          Kangeyam)
+                          Kumarasamy Colony,
+                          <br />
+                          Kangeyam, Tiruppur - 641604
                         </p>
                       </div>
                     </div>
@@ -204,7 +183,7 @@ Please confirm the slot availability.`;
                       <div>
                         <p className="font-semibold">Operating Hours</p>
                         <p className="text-slate-400 text-sm">
-                          Mon - Sun: 08:00 AM - 09:00 PM
+                          Mon - Sun: Open 24 Hours
                         </p>
                       </div>
                     </div>
@@ -253,7 +232,7 @@ Please confirm the slot availability.`;
                             value={formData.phone}
                             onChange={handleChange}
                             type="tel"
-                            placeholder="+91 98765 43210"
+                            placeholder="+91 82209 15207"
                             className="bg-slate-50 border-slate-200 h-12"
                             required
                           />
@@ -347,16 +326,16 @@ Please confirm the slot availability.`;
                 Find Us on Google Maps
               </h2>
               <p className="text-muted-foreground">
-                Serving Tiruppur and surrounding 15km radius
+                Serving Kumarasamy Colony, Kangeyam, and Tiruppur
               </p>
             </div>
 
             <div className="rounded-3xl overflow-hidden shadow-2xl border border-slate-200 h-[450px] relative group">
-              {/* Overlay for interaction hint */}
               <div className="absolute inset-0 bg-black/5 pointer-events-none group-hover:bg-transparent transition-colors z-10" />
 
+              {/* UPDATED MAP URL FOR YOUR NEW ADDRESS */}
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62657.34865886297!2d77.3069!3d11.1085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba907b000000001%3A0x867332c943147814!2sTiruppur%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin&q=Mr.+Cool+Service+Tiruppur"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.787760773636!2d77.35485131480287!3d11.098986492103323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba907f39e2e71bd%3A0x420836e67f60761c!2sMr.%20Cool%20Service!5e0!3m2!1sen!2sin!4v1679901234567!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 className="border-none grayscale group-hover:grayscale-0 transition-all duration-700"
@@ -368,7 +347,7 @@ Please confirm the slot availability.`;
             </div>
 
             <div className="grid md:grid-cols-3 gap-4 mt-8">
-              {["Tiruppur North", "Tiruppur South", "Avinashi"].map((area) => (
+              {["Kangeyam", "Kumarasamy Colony", "Tiruppur"].map((area) => (
                 <div
                   key={area}
                   className="bg-slate-50 p-4 rounded-xl text-center border border-slate-100 text-sm font-semibold text-slate-600"

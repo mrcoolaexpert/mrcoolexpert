@@ -10,7 +10,6 @@ import {
   AlertCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import SEO from "@/components/SEO";
 import Header from "@/components/Header";
@@ -317,21 +316,23 @@ const Gallery = () => {
               Ready to see these results in your home?
             </h2>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <a href="tel:+919842365480">
+              <a href="tel:+918220915207">
                 <Button
                   size="lg"
                   variant="secondary"
-                  className="w-full sm:w-auto font-bold h-14 px-8 text-lg"
+                  className="w-full sm:w-auto font-bold h-14 px-8 text-lg shadow-lg hover:shadow-xl transition-all hover:scale-105"
                 >
                   <Phone className="w-5 h-5 mr-2" />
                   Book Service Visit
                 </Button>
               </a>
+
               <Link to="/contact">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="w-full sm:w-auto border-white/30 text-white hover:bg-white hover:text-primary font-bold h-14 px-8"
+                  // FIX: Added 'bg-transparent' and 'border-2' to make the button visible
+                  className="w-full sm:w-auto bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary font-bold h-14 px-8 transition-all hover:scale-105"
                 >
                   View Service Menu
                 </Button>

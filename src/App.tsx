@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import { Loader2 } from "lucide-react";
 
-// LAZY LOAD PAGES (This splits the code into chunks)
+// LAZY LOAD PAGES
 const Index = lazy(() => import("./pages/Index"));
 const About = lazy(() => import("./pages/About"));
 const Services = lazy(() => import("./pages/Services"));
@@ -16,9 +16,11 @@ const Contact = lazy(() => import("./pages/Contact"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
+// NEW: Import the Location Page
+const Kangeyam = lazy(() => import("./pages/locations/Kangeyam"));
+
 const queryClient = new QueryClient();
 
-// Simple Loading Spinner
 const PageLoader = () => (
   <div className="flex h-screen w-full items-center justify-center bg-slate-50">
     <Loader2 className="h-10 w-10 animate-spin text-primary" />
@@ -30,8 +32,10 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-        {/* Suspense shows the spinner while the chunk loads */}
+      {/* FIX: Added future flags to silence console warnings */}
+      <BrowserRouter
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
         <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<Index />} />
@@ -41,6 +45,10 @@ const App = () => (
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<Privacy />} />
+
+            {/* SEO Route for Kangeyam Location */}
+            <Route path="/ac-service-kangeyam" element={<Kangeyam />} />
+
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

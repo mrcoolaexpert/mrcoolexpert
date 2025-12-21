@@ -22,7 +22,7 @@ import SEO from "@/components/SEO";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
-import logo from "@/assets/mrcool-logo.jpeg";
+import FaqSection from "@/components/FaqSection";
 
 // Mock data for carousels
 const testimonials = [
@@ -155,8 +155,8 @@ const Index = () => {
                 <div className="relative">
                   <div className="absolute -inset-4 bg-accent/20 rounded-full blur-3xl opacity-50" />
                   <img
-                    src={logo}
-                    alt="Mr. Cool Service Technician"
+                    src="/mrcool-logo.webp"
+                    alt="Mr. Cool Service - Best AC Repair Mechanic in Tiruppur and Kangeyam"
                     /* Explicit width/height prevents Layout Shift (CLS) */
                     width="500"
                     height="500"
@@ -372,6 +372,9 @@ const Index = () => {
           </div>
         </section>
 
+        {/* NEW: Add FAQ Section Here (Before CTA) */}
+        <FaqSection />
+
         {/* Final CTA */}
         <section className="py-20 bg-primary text-primary-foreground relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
@@ -384,21 +387,23 @@ const Index = () => {
               24/7 for emergency breakdowns.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <a href="tel:+919842365480">
+              <a href="tel:+918220915207">
                 <Button
                   size="lg"
                   variant="secondary"
-                  className="w-full sm:w-auto font-bold h-14 px-8 text-lg"
+                  className="w-full sm:w-auto font-bold h-14 px-8 text-lg shadow-lg hover:shadow-xl transition-all"
                 >
                   <Phone className="w-5 h-5 mr-2" />
                   Call +91 82209 15207
                 </Button>
               </a>
+
               <Link to="/contact">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-primary font-bold h-14 px-8 text-lg"
+                  // FIX: Added 'bg-transparent' and 'border-2'
+                  className="w-full sm:w-auto bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary font-bold h-14 px-8 text-lg transition-all duration-300"
                 >
                   Book Online
                 </Button>

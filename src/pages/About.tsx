@@ -16,7 +16,6 @@ import SEO from "@/components/SEO";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
-import logo from "@/assets/mrcool-logo.jpeg";
 
 const values = [
   {
@@ -110,7 +109,7 @@ const About = () => {
               <div className="animate-fade-in-up relative">
                 <div className="absolute -inset-4 bg-accent/10 rounded-full blur-2xl opacity-50" />
                 <img
-                  src={logo}
+                  src="/mrcool-logo.webp"
                   alt="Mr. Cool Service Team - Best AC Mechanics in Tiruppur"
                   className="relative w-full max-w-md mx-auto rounded-3xl shadow-2xl border-4 border-white"
                 />
@@ -338,20 +337,22 @@ const About = () => {
               at local prices.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a href="tel:+919842365480">
+              <a href="tel:+918220915207">
                 <Button
                   size="lg"
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-14 px-8 shadow-xl"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-14 px-8 shadow-xl transition-all hover:scale-105"
                 >
                   <Phone className="w-5 h-5 mr-2" />
                   Call +91 82209 15207
                 </Button>
               </a>
+
               <Link to="/contact">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-accent font-bold h-14 px-8"
+                  // FIX: Added 'bg-transparent' and 'border-2' to make text visible against colored background
+                  className="bg-transparent border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary font-bold h-14 px-8 transition-all hover:scale-105"
                 >
                   Book Appointment
                 </Button>
