@@ -58,14 +58,14 @@ const Footer = () => {
             </p>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.instagram.com/mr.cool8220?igsh=NGNyZTMwc2hqMHU0&utm_source=ig_contact_invite"
                 aria-label="Facebook"
                 className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-all duration-300"
               >
                 <Facebook className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/mr.cool8220?igsh=NGNyZTMwc2hqMHU0&utm_source=ig_contact_invite"
                 aria-label="Instagram"
                 className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-all duration-300"
               >
