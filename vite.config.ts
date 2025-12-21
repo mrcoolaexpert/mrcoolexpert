@@ -17,19 +17,13 @@ export default defineConfig(({ mode }) => ({
   },
   // ADVANCED BUILD OPTIMIZATION
  build: {
-    // Generates smaller files for better performance
-    minify: 'terser', 
-    terserOptions: {
-      compress: {
-        drop_console: true, // Removes console.logs
-        drop_debugger: true
-      }
-    },
+    // Standard minification (safer than terser for now)
+    minify: 'esbuild', 
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom', 'framer-motion'],
-          ui: ['@radix-ui/react-slot', 'lucide-react']
+          // Only split the core React libraries which we KNOW are installed
+          vendor: ['react', 'react-dom', 'react-router-dom'],
         }
       }
     }
