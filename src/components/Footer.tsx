@@ -60,14 +60,14 @@ const Footer = () => {
               <a
                 href="https://www.instagram.com/mr.cool8220?igsh=NGNyZTMwc2hqMHU0&utm_source=ig_contact_invite"
                 aria-label="Facebook"
-                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-all duration-300"
+                className="w-12 h-12 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-all duration-300"
               >
                 <Facebook className="w-5 h-5" />
               </a>
               <a
                 href="https://www.instagram.com/mr.cool8220?igsh=NGNyZTMwc2hqMHU0&utm_source=ig_contact_invite"
                 aria-label="Instagram"
-                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-all duration-300"
+                className="w-12 h-12 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-all duration-300"
               >
                 <Instagram className="w-5 h-5" />
               </a>
@@ -176,8 +176,9 @@ const Footer = () => {
               </a>
 
               {/* FIX: Replaced broken "goo.gl" link with a direct Google Maps Search Link */}
+              {/* FIX: THIS IS THE CORRECT, CRAWLABLE GOOGLE MAPS LINK */}
               <a
-                href="https://www.google.com/maps/search/?api=1&query=Cross+rode+Ctc,+3rd+St,+Kumarasamy+Colony,+Kangeyam,+Tiruppur,+Tamil+Nadu+641604"
+                href="https://www.google.com/maps/search/?api=1&query=Mr.+Cool+Service+Kumarasamy+Colony+Kangeyam"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start gap-4 p-3 rounded-lg bg-primary-foreground/5 hover:bg-primary-foreground/10 transition-colors group"
