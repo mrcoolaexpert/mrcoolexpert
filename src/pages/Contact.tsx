@@ -168,11 +168,11 @@ Please confirm the slot availability.`;
                     <div className="flex gap-4">
                       <MapPin className="w-6 h-6 text-slate-400 shrink-0 mt-1" />
                       <div>
-                        <p className="font-semibold">Headquarters</p>
+                        <p className="font-semibold">Address</p>
                         <p className="text-slate-400 text-sm leading-relaxed">
-                          Cross rode Ctc, 3rd St,
+                          Kangayam cross rode,
                           <br />
-                          Kumarasamy Colony,
+                          Ctc kumarasamy colany 3rd Street,
                           <br />
                           Kangeyam, Tiruppur - 641604
                         </p>
@@ -218,7 +218,7 @@ Please confirm the slot availability.`;
                             name="name"
                             value={formData.name}
                             onChange={handleChange}
-                            placeholder="John Doe"
+                            placeholder="Joseph Vijay"
                             className="bg-slate-50 border-slate-200 h-12"
                             required
                           />
@@ -249,7 +249,7 @@ Please confirm the slot availability.`;
                             value={formData.email}
                             onChange={handleChange}
                             type="email"
-                            placeholder="john@example.com"
+                            placeholder="vijay@example.com"
                             className="bg-slate-50 border-slate-200 h-12"
                           />
                         </div>
@@ -326,7 +326,8 @@ Please confirm the slot availability.`;
                 Find Us on Google Maps
               </h2>
               <p className="text-muted-foreground">
-                Serving Kumarasamy Colony, Kangeyam, and Tiruppur
+                Kangayam cross rode, Ctc kumarasamy colany 3rd Street, Tiruppur
+                641604
               </p>
             </div>
 

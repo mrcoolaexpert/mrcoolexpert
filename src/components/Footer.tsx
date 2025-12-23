@@ -53,7 +53,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-sm text-primary-foreground/80 leading-relaxed pr-4">
-              Registered home appliance service center in Kumarasamy Colony.
+              Registered home appliance service center in Kangeyam, Trippur.
               Specializing in Inverter ACs, Washing Machines, and Refrigerators.
             </p>
             <div className="flex gap-4">
@@ -189,11 +189,11 @@ const Footer = () => {
                     Head Office
                   </p>
                   <p className="text-sm text-primary-foreground leading-tight">
-                    Cross rode Ctc, 3rd St,
+                    Kangayam cross rode,
                     <br />
-                    Kumarasamy Colony,
+                    Ctc kumarasamy colany 3rd Street,
                     <br />
-                    Kangeyam - 641604
+                    Kangeyam, Tiruppur - 641604
                   </p>
                 </div>
               </a>

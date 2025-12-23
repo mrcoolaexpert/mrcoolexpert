@@ -16,7 +16,21 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 
-// Enhanced Data with "Real" Attributes
+// --- IMAGE IMPORTS ---
+// Make sure these images exist in src/assets/gallery/
+import imgSplit from "@/assets/gallery/install-split.jpg";
+import imgPcb from "@/assets/gallery/repair-pcb.jpg";
+import imgJet from "@/assets/gallery/service-jet.jpg";
+import imgGas from "@/assets/gallery/repair-gas.jpg";
+import imgCassette from "@/assets/gallery/install-cassette.jpg";
+import imgWm from "@/assets/gallery/repair-wm.jpg";
+import imgFridge from "@/assets/gallery/repair-fridge.jpg";
+import imgAmc from "@/assets/gallery/service-amc.jpg";
+import imgWindow from "@/assets/gallery/service-window.jpg";
+import imgBefore from "@/assets/gallery/compare-dirty.jpg";
+import imgAfter from "@/assets/gallery/compare-clean.jpg";
+
+// Enhanced Data using Local Imports
 const galleryItems = [
   {
     id: 101,
@@ -25,6 +39,7 @@ const galleryItems = [
     loc: "Avinashi Road",
     date: "Dec 2024",
     desc: "Premium installation with concealed piping for a modern villa.",
+    image: imgSplit,
   },
   {
     id: 102,
@@ -33,6 +48,7 @@ const galleryItems = [
     loc: "Palladam",
     date: "Nov 2024",
     desc: "Fixed communication error (E5) in Daikin 1.5 Ton Inverter AC.",
+    image: imgPcb,
   },
   {
     id: 103,
@@ -41,6 +57,7 @@ const galleryItems = [
     loc: "Tiruppur North",
     date: "Dec 2024",
     desc: "Deep cleaning of blower wheel and cooling coil using high-pressure jet.",
+    image: imgJet,
   },
   {
     id: 104,
@@ -49,6 +66,7 @@ const galleryItems = [
     loc: "Kangeyam",
     date: "Oct 2024",
     desc: "Nitrogen pressure testing and R32 gas refilling.",
+    image: imgGas,
   },
   {
     id: 105,
@@ -57,6 +75,7 @@ const galleryItems = [
     loc: "Textile Office",
     date: "Sep 2024",
     desc: "Commercial Cassette AC installation for a 2000 sq.ft office space.",
+    image: imgCassette,
   },
   {
     id: 106,
@@ -65,6 +84,7 @@ const galleryItems = [
     loc: "Vellakovil",
     date: "Nov 2024",
     desc: "Replaced rusted flange and bearing for LG Front Load.",
+    image: imgWm,
   },
   {
     id: 107,
@@ -73,6 +93,7 @@ const galleryItems = [
     loc: "Uthukuli",
     date: "Dec 2024",
     desc: "Replaced faulty compressor with 5-year warranty unit.",
+    image: imgFridge,
   },
   {
     id: 108,
@@ -81,6 +102,7 @@ const galleryItems = [
     loc: "Apartment Complex",
     date: "Dec 2024",
     desc: "AMC service for 15 units in a residential complex.",
+    image: imgAmc,
   },
   {
     id: 109,
@@ -89,6 +111,7 @@ const galleryItems = [
     loc: "Old Bus Stand",
     date: "Nov 2024",
     desc: "Complete dismantle wash and chemical cleaning.",
+    image: imgWindow,
   },
 ];
 
@@ -104,8 +127,8 @@ const Gallery = () => {
     <>
       <SEO
         title="Project Gallery - Mr. Cool Service | AC Installation Photos Tiruppur"
-        description="View our latest work: Split AC installations in Avinashi, PCB repairs in Palladam, and Jet-pump service in Tiruppur. Real photos of real work."
-        keywords="AC installation photos, AC repair images Tiruppur, washing machine repair gallery, before after AC service"
+        description="View our latest work: Split AC installations in Avinashi, PCB repairs in Palladam, and Jet-pump service in Tiruppur."
+        keywords="AC installation photos, AC repair images Tiruppur, washing machine repair gallery"
       />
       <Header />
       <FloatingButtons />
@@ -161,20 +184,46 @@ const Gallery = () => {
                   key={item.id}
                   className="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col"
                 >
-                  {/* Image Placeholder Area */}
+                  {/* Image Area */}
                   <div className="relative aspect-video bg-slate-200 overflow-hidden">
-                    <div className="absolute inset-0 flex items-center justify-center bg-slate-100 group-hover:scale-105 transition-transform duration-500">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      // FIX: Typescript Safe Error Handling
+                      onError={(e) => {
+                        const target = e.currentTarget;
+                        target.style.display = "none"; // Hide the broken image
+
+                        // We cast nextElementSibling to HTMLElement so TS knows it has a style property
+                        const placeholder =
+                          target.nextElementSibling as HTMLElement;
+                        if (placeholder) {
+                          placeholder.style.display = "flex"; // Show placeholder
+                        }
+                      }}
+                    />
+
+                    {/* Fallback Placeholder (Hidden by default) */}
+                    <div className="hidden absolute inset-0 items-center justify-center bg-slate-100">
                       <Camera className="w-12 h-12 text-slate-300" />
+                      <span className="absolute bottom-2 text-xs text-slate-400">
+                        Image Missing
+                      </span>
                     </div>
 
                     {/* Floating Badges */}
-                    <div className="absolute top-4 left-4">
+                    <div className="absolute top-4 left-4 z-10">
                       <Badge className="bg-black/50 backdrop-blur-md text-white hover:bg-black/60 border-none">
                         {item.category}
                       </Badge>
                     </div>
-                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-                      <p className="text-white font-bold truncate">
+
+                    {/* Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80" />
+
+                    <div className="absolute bottom-0 left-0 right-0 p-4 z-10">
+                      <p className="text-white font-bold truncate text-lg shadow-sm">
                         {item.title}
                       </p>
                     </div>
@@ -274,34 +323,51 @@ const Gallery = () => {
               {/* Visual Comparison Card */}
               <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100">
                 <div className="grid grid-cols-2 h-80">
-                  {/* Before Side */}
-                  <div className="bg-red-50 flex flex-col items-center justify-center p-6 border-r border-slate-200 relative group">
-                    <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
-                    <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-xs font-bold mb-4">
-                      BEFORE
-                    </span>
-                    <p className="text-center text-sm text-red-800 font-medium">
-                      Clogged Filters &<br />
-                      Choked Coils
-                    </p>
-                    <div className="mt-4 text-xs text-slate-500 italic"></div>
+                  {/* Before Side - Dirty AC Filter Image */}
+                  <div className="relative bg-red-50 flex flex-col items-center justify-center p-6 border-r border-slate-200 group overflow-hidden">
+                    {/* Background Image for Before */}
+                    <img
+                      src={imgBefore}
+                      alt="Dirty Clogged AC Filter"
+                      className="absolute inset-0 w-full h-full object-cover opacity-60 grayscale group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-red-900/20" />
+
+                    <div className="relative z-10 flex flex-col items-center">
+                      <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-xs font-bold mb-4 border border-red-200 shadow-sm">
+                        BEFORE
+                      </span>
+                      <p className="text-center text-sm text-red-950 font-bold bg-white/80 backdrop-blur-sm p-2 rounded-lg shadow-sm">
+                        Clogged Filters &<br />
+                        Choked Coils
+                      </p>
+                    </div>
                   </div>
 
-                  {/* After Side */}
-                  <div className="bg-green-50 flex flex-col items-center justify-center p-6 relative group">
-                    <div className="absolute inset-0 bg-white/20 group-hover:bg-transparent transition-colors" />
-                    <span className="bg-green-100 text-green-600 px-3 py-1 rounded-full text-xs font-bold mb-4">
-                      AFTER
-                    </span>
-                    <p className="text-center text-sm text-green-800 font-medium">
-                      Jet-Pump Cleaned &<br />
-                      Sanitized
-                    </p>
+                  {/* After Side - Clean AC Unit Image */}
+                  <div className="relative bg-green-50 flex flex-col items-center justify-center p-6 group overflow-hidden">
+                    {/* Background Image for After */}
+                    <img
+                      src={imgAfter}
+                      alt="Clean AC Unit"
+                      className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-green-900/10" />
+
+                    <div className="relative z-10 flex flex-col items-center">
+                      <span className="bg-green-100 text-green-600 px-3 py-1 rounded-full text-xs font-bold mb-4 border border-green-200 shadow-sm">
+                        AFTER
+                      </span>
+                      <p className="text-center text-sm text-green-950 font-bold bg-white/80 backdrop-blur-sm p-2 rounded-lg shadow-sm">
+                        Jet-Pump Cleaned &<br />
+                        Sanitized
+                      </p>
+                    </div>
                   </div>
                 </div>
 
                 {/* Center Badge */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-xl z-10">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-xl z-20">
                   <CheckCircle2 className="w-8 h-8 text-primary" />
                 </div>
               </div>
@@ -331,7 +397,6 @@ const Gallery = () => {
                 <Button
                   size="lg"
                   variant="outline"
-                  // FIX: Added 'bg-transparent' and 'border-2' to make the button visible
                   className="w-full sm:w-auto bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary font-bold h-14 px-8 transition-all hover:scale-105"
                 >
                   View Service Menu

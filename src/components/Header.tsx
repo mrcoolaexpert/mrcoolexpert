@@ -25,7 +25,10 @@ const Header = () => {
       <div className="hidden md:block bg-primary text-primary-foreground py-2">
         <div className="container mx-auto px-4 flex justify-between items-center text-sm">
           <div className="flex items-center gap-4">
-            <a href="tel:+919842365480" className="flex items-center gap-1 hover:text-secondary transition-colors">
+            <a
+              href="tel:+918220915207"
+              className="flex items-center gap-1 hover:text-secondary transition-colors"
+            >
               <Phone className="w-4 h-4" />
               +91 82209 15207
             </a>
@@ -34,7 +37,9 @@ const Header = () => {
               Tiruppur, Tamil Nadu
             </span>
           </div>
-          <span className="text-secondary">Serving Tiruppur, Avinashi, Palladam & 15km radius</span>
+          <span className="text-secondary">
+            Serving Tiruppur, Avinashi, Palladam & 15km radius
+          </span>
         </div>
       </div>
 
@@ -43,10 +48,18 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 hover-scale">
-            <img src={logo} alt="Mr. Cool Service Logo" className="w-12 h-12 rounded-lg object-cover" />
+            <img
+              src={logo}
+              alt="Mr. Cool Service Logo"
+              className="w-12 h-12 rounded-lg object-cover"
+            />
             <div>
-              <h1 className="text-xl font-display font-bold text-primary">Mr. Cool Service</h1>
-              <p className="text-xs text-muted-foreground">AC Experts in Tiruppur</p>
+              <h1 className="text-xl font-display font-bold text-primary">
+                Mr. Cool Service
+              </h1>
+              <p className="text-xs text-muted-foreground">
+                AC Experts in Tiruppur
+              </p>
             </div>
           </Link>
 
@@ -69,7 +82,7 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-3">
-            <a href="tel:+919842365480">
+            <a href="tel:+918220915207">
               <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold">
                 <Phone className="w-4 h-4 mr-2" />
                 Book Now
@@ -83,7 +96,11 @@ const Header = () => {
             className="lg:hidden p-2 rounded-lg hover:bg-secondary transition-colors"
             aria-label="Toggle menu"
           >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
 
@@ -105,7 +122,7 @@ const Header = () => {
                   {link.label}
                 </Link>
               ))}
-              <a href="tel:+919842365480" className="mt-2">
+              <a href="tel:+918220915207" className="mt-2">
                 <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold">
                   <Phone className="w-4 h-4 mr-2" />
                   Book Now

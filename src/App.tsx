@@ -2,8 +2,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Suspense, lazy } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom"; // Added useLocation
+import { Suspense, lazy, useEffect } from "react"; // Added useEffect
 import { Loader2 } from "lucide-react";
 
 // LAZY LOAD PAGES
@@ -21,6 +21,17 @@ const Kangeyam = lazy(() => import("./pages/locations/Kangeyam"));
 
 const queryClient = new QueryClient();
 
+// 1. Create the ScrollToTop component
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]); // Triggers whenever the URL path changes
+
+  return null;
+};
+
 const PageLoader = () => (
   <div className="flex h-screen w-full items-center justify-center bg-slate-50">
     <Loader2 className="h-10 w-10 animate-spin text-primary" />
@@ -32,10 +43,12 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      {/* FIX: Added future flags to silence console warnings */}
       <BrowserRouter
         future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
       >
+        {/* 2. Place ScrollToTop inside BrowserRouter but outside Routes */}
+        <ScrollToTop />
+
         <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<Index />} />

@@ -118,7 +118,7 @@ const Index = () => {
                   Machines, and Refrigerators. Fast, reliable, and affordable.
                 </p>
                 <div className="flex flex-wrap justify-center lg:justify-start gap-4">
-                  <a href="tel:+919842365480">
+                  <a href="tel:+918220915207">
                     <Button
                       size="lg"
                       className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-12 px-8 text-lg shadow-lg hover:shadow-xl transition-all"
