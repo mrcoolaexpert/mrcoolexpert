@@ -17,6 +17,8 @@ import SEO from "@/components/SEO";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
+
+// Ensure these imported files are optimized (WebP format preferred, <20KB each)
 import lg_logo from "@/assets/brands/lg.png";
 import samsung_logo from "@/assets/brands/samsung.png";
 import Daikin_logo from "@/assets/brands/Daikin_logo.jpg";
@@ -32,6 +34,8 @@ import Mitsubishi_logo from "@/assets/brands/Mitsubishi_logo.png";
 import ifb_logo from "@/assets/brands/IFB_logo.png";
 import onida_logo from "@/assets/brands/Onida_logo.png";
 
+// PERFORMANCE NOTE: I added 'width' and 'height' to the data.
+// This helps the browser reserve space before the image loads (prevents layout shifts).
 const brands = [
   {
     name: "LG",
@@ -161,7 +165,7 @@ const Brands = () => {
               <h1 className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-6">
                 Universal Brand Experts
               </h1>
-              <p className="text-lg text-slate-600 mb-8">
+              <p className="text-lg text-slate-700 mb-8">
                 Whether it's a vintage Window AC or a modern Wi-Fi Inverter
                 model, our technicians have the specific schematics and tools
                 for every manufacturer.
@@ -169,13 +173,14 @@ const Brands = () => {
 
               {/* Search Bar */}
               <div className="max-w-md mx-auto relative">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 w-5 h-5" />
                 <Input
                   type="text"
                   placeholder="Search your brand (e.g., 'Daikin')"
-                  className="pl-10 h-12 rounded-full shadow-lg border-slate-200 text-lg bg-white focus:ring-2 focus:ring-primary"
+                  className="pl-10 h-12 rounded-full shadow-lg border-slate-300 text-lg bg-white focus:ring-2 focus:ring-primary placeholder:text-slate-500 text-slate-900"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
+                  aria-label="Search air conditioner brands"
                 />
               </div>
             </div>
@@ -185,12 +190,14 @@ const Brands = () => {
         {/* Brand Grid Section */}
         <section className="py-20">
           <div className="container mx-auto px-4">
+            <h2 className="sr-only">Our Supported Air Conditioner Brands</h2>
+
             {filteredBrands.length === 0 ? (
               <div className="text-center py-20">
-                <h3 className="text-xl font-bold text-slate-500">
+                <h3 className="text-xl font-bold text-slate-600">
                   Brand not listed?
                 </h3>
-                <p className="mb-4 text-slate-400">
+                <p className="mb-4 text-slate-500">
                   Don't worry, we likely service it too.
                 </p>
                 <Button variant="outline" onClick={() => setSearchTerm("")}>
@@ -210,12 +217,18 @@ const Brands = () => {
                         <img
                           src={brand.logo}
                           alt={`${brand.name} AC Service`}
+                          // PERFORMANCE FIX:
+                          // 1. loading="lazy": Browser only loads image when user scrolls near it
+                          // 2. decoding="async": Decodes image off the main thread
+                          // 3. width/height: Prevents layout shift
+                          loading="lazy"
+                          decoding="async"
+                          width="160"
+                          height="80"
                           className="max-h-16 max-w-[80%] object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500 opacity-70 group-hover:opacity-100"
-                          // --- FIXED TYPESCRIPT ERROR HERE ---
                           onError={(e) => {
                             const target = e.target as HTMLImageElement;
                             target.style.display = "none";
-                            // nextElementSibling is safer than nextSibling (ignores text nodes)
                             if (target.nextElementSibling) {
                               target.nextElementSibling.classList.remove(
                                 "hidden"
@@ -223,8 +236,7 @@ const Brands = () => {
                             }
                           }}
                         />
-                        {/* Fallback Text */}
-                        <span className="hidden text-2xl font-black text-slate-300 group-hover:text-primary transition-colors uppercase tracking-wider">
+                        <span className="hidden text-2xl font-black text-slate-400 group-hover:text-primary transition-colors uppercase tracking-wider">
                           {brand.name}
                         </span>
                       </div>
@@ -236,12 +248,12 @@ const Brands = () => {
                           </h3>
                           <Badge
                             variant="secondary"
-                            className="text-[10px] h-5 px-2 bg-slate-100 text-slate-500 font-medium"
+                            className="text-[10px] h-5 px-2 bg-slate-100 text-slate-700 font-medium"
                           >
                             {brand.category}
                           </Badge>
                         </div>
-                        <p className="text-xs text-blue-600 font-medium bg-blue-50 py-1.5 px-3 rounded-full inline-block border border-blue-100">
+                        <p className="text-xs text-blue-700 font-medium bg-blue-50 py-1.5 px-3 rounded-full inline-block border border-blue-100">
                           {brand.specialized}
                         </p>
                       </div>
@@ -264,7 +276,7 @@ const Brands = () => {
                 <h2 className="text-3xl font-display font-bold text-slate-900 mb-4">
                   Inverter vs. Non-Inverter Support
                 </h2>
-                <p className="text-slate-600 mb-6 text-lg">
+                <p className="text-slate-700 mb-6 text-lg">
                   Modern brands like LG, Samsung, and Daikin use complex
                   PCB-driven Inverter technology. Unlike local mechanics, we use
                   diagnostic scanners to read error codes directly from these
@@ -279,9 +291,9 @@ const Brands = () => {
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-3">
                       <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center shrink-0">
-                        <CheckCircle className="w-4 h-4 text-green-600" />
+                        <CheckCircle className="w-4 h-4 text-green-700" />
                       </div>
-                      <span className="font-medium text-slate-700">{item}</span>
+                      <span className="font-medium text-slate-800">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -291,11 +303,11 @@ const Brands = () => {
               <div className="order-1 lg:order-2 bg-slate-50 rounded-3xl p-8 border border-slate-200 flex flex-col items-center justify-center text-center h-80 relative overflow-hidden group">
                 <div className="absolute inset-0 bg-grid-slate-200/[0.2] [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))]" />
                 <div className="relative z-10">
-                  <Cpu className="w-24 h-24 text-slate-300 mb-6 group-hover:text-primary transition-colors duration-500" />
-                  <h4 className="text-lg font-bold text-slate-700 mb-2">
+                  <Cpu className="w-24 h-24 text-slate-400 mb-6 group-hover:text-primary transition-colors duration-500" />
+                  <h3 className="text-lg font-bold text-slate-800 mb-2">
                     Smart PCB Diagnostics
-                  </h4>
-                  <p className="text-sm text-slate-500 max-w-xs mx-auto">
+                  </h3>
+                  <p className="text-sm text-slate-600 max-w-xs mx-auto">
                     We understand the complex electronics inside your{" "}
                     <span className="text-primary font-bold">
                       {filteredBrands[0]?.name || "AC"}
@@ -318,7 +330,7 @@ const Brands = () => {
               <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
                 <ShieldCheck className="w-10 h-10 text-green-400 mx-auto mb-4" />
                 <h3 className="font-bold text-lg mb-2">Warranty Protection</h3>
-                <p className="text-slate-400 text-sm">
+                <p className="text-slate-300 text-sm">
                   We follow manufacturer guidelines so your warranty remains
                   valid (where applicable).
                 </p>
@@ -326,7 +338,7 @@ const Brands = () => {
               <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
                 <Zap className="w-10 h-10 text-yellow-400 mx-auto mb-4" />
                 <h3 className="font-bold text-lg mb-2">Original Spares</h3>
-                <p className="text-slate-400 text-sm">
+                <p className="text-slate-300 text-sm">
                   We source brand-specific parts like copper coils, PCBs, and
                   sensors.
                 </p>
@@ -334,7 +346,7 @@ const Brands = () => {
               <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
                 <Cpu className="w-10 h-10 text-blue-400 mx-auto mb-4" />
                 <h3 className="font-bold text-lg mb-2">Error Code Decoding</h3>
-                <p className="text-slate-400 text-sm">
+                <p className="text-slate-300 text-sm">
                   We don't guess. We read the specific error codes (E1, E4,
                   CH05) for your brand.
                 </p>
@@ -349,12 +361,12 @@ const Brands = () => {
             <h2 className="text-3xl font-display font-bold mb-4">
               Book a Specialist for Your Brand
             </h2>
-            <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-blue-50 mb-8 max-w-2xl mx-auto font-medium">
               Tell us your AC brand and model, and we'll send a technician
               carrying the right tools for that specific manufacturer.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a href="tel:+918220915207">
+              <a href="tel:+918220915207" aria-label="Call Expert Now">
                 <Button
                   size="lg"
                   className="bg-white text-blue-600 hover:bg-blue-50 font-bold h-14 px-8 shadow-xl transition-transform hover:scale-105"
@@ -364,7 +376,7 @@ const Brands = () => {
                 </Button>
               </a>
 
-              <Link to="/contact">
+              <Link to="/contact" aria-label="Book Online">
                 <Button
                   size="lg"
                   variant="outline"
