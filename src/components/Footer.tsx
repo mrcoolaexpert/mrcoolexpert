@@ -206,6 +206,18 @@ const Footer = () => {
       <div className="bg-primary-foreground/5 py-6 border-t border-primary-foreground/10">
         <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-primary-foreground/60">
           <p>© {currentYear} Mr. Cool Service. All rights reserved.</p>
+          {/* Developer Credit Line */}
+          <p className="text-xs">
+            Developed and Maintained by{" "}
+            <a
+              href="https://alkjtechnologies.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white-600 hover:text-white-800 transition-colors duration-200 font-medium"
+            >
+              ALKJ technologies
+            </a>
+          </p>
           <div className="flex gap-6">
             <Link
               to="/services"

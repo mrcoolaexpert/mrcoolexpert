@@ -17,103 +17,116 @@ import SEO from "@/components/SEO";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
+import lg_logo from "@/assets/brands/lg.png";
+import samsung_logo from "@/assets/brands/samsung.png";
+import Daikin_logo from "@/assets/brands/Daikin_logo.jpg";
+import Voltas_Logo from "@/assets/brands/Voltas-Logo.png";
+import blue_star_logo from "@/assets/brands/Blue_Star_logo.png";
+import hitachi_logo from "@/assets/brands/Hitachi_logo.png";
+import panasonic_logo from "@/assets/brands/Panasonic_logo.png";
+import carrier_logo from "@/assets/brands/Carrier_Logo.png";
+import whirpool_logo from "@/assets/brands/Whirlpool_Logo.png";
+import godrej_logo from "@/assets/brands/Godrej_Logo.png";
+import Haier_logo from "@/assets/brands/Haier_logo.png";
+import Mitsubishi_logo from "@/assets/brands/Mitsubishi_logo.png";
+import ifb_logo from "@/assets/brands/IFB_logo.png";
+import onida_logo from "@/assets/brands/Onida_logo.png";
 
-// Enhanced Data with Logo Domains and Specializations
 const brands = [
   {
     name: "LG",
     category: "Korean Tech",
-    domain: "lg.com",
+    logo: lg_logo,
     specialized: "Inverter V ACs",
   },
   {
     name: "Samsung",
     category: "Korean Tech",
-    domain: "samsung.com",
+    logo: samsung_logo,
     specialized: "WindFree™ Cooling",
   },
   {
     name: "Daikin",
     category: "Japanese Precision",
-    domain: "daikin.com",
+    logo: Daikin_logo,
     specialized: "Coanda Airflow",
   },
   {
     name: "Voltas",
     category: "Indian Leader",
-    domain: "myvoltas.com",
+    logo: Voltas_Logo,
     specialized: "All Weather ACs",
   },
   {
     name: "Blue Star",
     category: "Indian Leader",
-    domain: "bluestarindia.com",
+    logo: blue_star_logo,
     specialized: "Commercial Cooling",
   },
   {
     name: "Hitachi",
     category: "Japanese Precision",
-    domain: "jci-hitachi.com",
+    logo: hitachi_logo,
     specialized: "Expandable Inverter",
   },
   {
     name: "Panasonic",
     category: "Japanese Precision",
-    domain: "panasonic.com",
+    logo: panasonic_logo,
     specialized: "Nanoe™ X Filter",
   },
   {
     name: "Carrier",
     category: "American Pioneer",
-    domain: "carrier.com",
+    logo: carrier_logo,
     specialized: "High Ambient Cooling",
   },
   {
     name: "Whirlpool",
     category: "American Pioneer",
-    domain: "whirlpool.com",
+    logo: whirpool_logo,
     specialized: "6th Sense Tech",
   },
   {
     name: "Godrej",
     category: "Indian Leader",
-    domain: "godrej.com",
+    logo: godrej_logo,
     specialized: "Green Gas R290",
   },
   {
     name: "Lloyd",
     category: "Indian Leader",
-    domain: "mylloyd.com",
+    logo: "/assets/brands/lloyd.png",
     specialized: "Rapid Cooling",
   },
   {
     name: "Haier",
     category: "Global Tech",
-    domain: "haier.com",
+    logo: Haier_logo,
     specialized: "Self-Clean Inverter",
   },
   {
     name: "O General",
     category: "Japanese Precision",
-    domain: "generalindia.com",
+    logo: "/assets/brands/general.png",
     specialized: "Tropical Rotary",
   },
   {
     name: "Mitsubishi",
     category: "Japanese Precision",
-    domain: "mitsubishielectric.com",
+    logo: Mitsubishi_logo,
     specialized: "Heavy Duty",
   },
   {
     name: "IFB",
     category: "Indian Leader",
-    domain: "ifbappliances.com",
+    logo: ifb_logo,
     specialized: "Gold Fin Technology",
   },
   {
     name: "Onida",
     category: "Indian Leader",
-    domain: "onida.com",
+    logo: onida_logo,
     specialized: "Powerful Airflow",
   },
 ];
@@ -141,14 +154,14 @@ const Brands = () => {
           <div className="absolute inset-0 bg-grid-pattern opacity-[0.05]" />
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl mx-auto text-center animate-fade-in-up">
-              <span className="inline-flex items-center gap-2 bg-white/10 text-primary-foreground/90 px-4 py-1.5 rounded-full text-sm font-semibold border border-white/20 mb-6 backdrop-blur-sm">
+              <span className="inline-flex items-center gap-2 bg-blue-100 text-blue-800 px-4 py-1.5 rounded-full text-sm font-semibold border border-blue-200 mb-6 backdrop-blur-sm">
                 <Globe className="w-4 h-4" />
                 <span>Servicing 50+ Global & Local Brands</span>
               </span>
-              <h1 className="text-4xl md:text-6xl font-display font-bold text-foreground mb-6">
+              <h1 className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-6">
                 Universal Brand Experts
               </h1>
-              <p className="text-lg text-muted-foreground mb-8">
+              <p className="text-lg text-slate-600 mb-8">
                 Whether it's a vintage Window AC or a modern Wi-Fi Inverter
                 model, our technicians have the specific schematics and tools
                 for every manufacturer.
@@ -156,11 +169,11 @@ const Brands = () => {
 
               {/* Search Bar */}
               <div className="max-w-md mx-auto relative">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground w-5 h-5" />
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
                 <Input
                   type="text"
                   placeholder="Search your brand (e.g., 'Daikin')"
-                  className="pl-10 h-12 rounded-full shadow-lg border-primary/20 text-lg"
+                  className="pl-10 h-12 rounded-full shadow-lg border-slate-200 text-lg bg-white focus:ring-2 focus:ring-primary"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />
@@ -174,10 +187,12 @@ const Brands = () => {
           <div className="container mx-auto px-4">
             {filteredBrands.length === 0 ? (
               <div className="text-center py-20">
-                <h3 className="text-xl font-bold text-muted-foreground">
+                <h3 className="text-xl font-bold text-slate-500">
                   Brand not listed?
                 </h3>
-                <p className="mb-4">Don't worry, we likely service it too.</p>
+                <p className="mb-4 text-slate-400">
+                  Don't worry, we likely service it too.
+                </p>
                 <Button variant="outline" onClick={() => setSearchTerm("")}>
                   Show All Brands
                 </Button>
@@ -187,43 +202,47 @@ const Brands = () => {
                 {filteredBrands.map((brand, index) => (
                   <Card
                     key={index}
-                    className="group hover:shadow-xl transition-all duration-300 border-border/60 hover:-translate-y-1 bg-white"
+                    className="group hover:shadow-xl transition-all duration-300 border-slate-200 hover:-translate-y-1 bg-white overflow-hidden"
                   >
                     <CardContent className="p-6 flex flex-col items-center text-center h-full">
-                      {/* Logo Fetcher with Fallback */}
-                      <div className="w-full h-20 mb-6 flex items-center justify-center p-2">
+                      {/* Logo Container */}
+                      <div className="w-full h-24 mb-4 flex items-center justify-center p-2 bg-slate-50 rounded-lg group-hover:bg-white transition-colors">
                         <img
-                          src={`https://logo.clearbit.com/${brand.domain}?size=120`}
-                          alt={`${brand.name} logo`}
-                          className="max-h-16 max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500 opacity-80 group-hover:opacity-100"
+                          src={brand.logo}
+                          alt={`${brand.name} AC Service`}
+                          className="max-h-16 max-w-[80%] object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500 opacity-70 group-hover:opacity-100"
+                          // --- FIXED TYPESCRIPT ERROR HERE ---
                           onError={(e) => {
-                            // Fallback to text if logo not found
-                            (e.target as HTMLImageElement).style.display =
-                              "none";
-                            (
-                              e.target as HTMLImageElement
-                            ).nextElementSibling?.classList.remove("hidden");
+                            const target = e.target as HTMLImageElement;
+                            target.style.display = "none";
+                            // nextElementSibling is safer than nextSibling (ignores text nodes)
+                            if (target.nextElementSibling) {
+                              target.nextElementSibling.classList.remove(
+                                "hidden"
+                              );
+                            }
                           }}
                         />
-                        <span className="hidden text-2xl font-black text-slate-300 group-hover:text-primary transition-colors">
+                        {/* Fallback Text */}
+                        <span className="hidden text-2xl font-black text-slate-300 group-hover:text-primary transition-colors uppercase tracking-wider">
                           {brand.name}
                         </span>
                       </div>
 
                       <div className="mt-auto w-full">
-                        <div className="flex items-center justify-center gap-2 mb-2">
-                          <h3 className="font-bold text-lg text-foreground">
+                        <div className="flex flex-col items-center gap-2 mb-3">
+                          <h3 className="font-bold text-lg text-slate-800">
                             {brand.name}
                           </h3>
                           <Badge
                             variant="secondary"
-                            className="text-[10px] h-5 px-1.5 bg-slate-100 text-slate-500"
+                            className="text-[10px] h-5 px-2 bg-slate-100 text-slate-500 font-medium"
                           >
                             {brand.category}
                           </Badge>
                         </div>
-                        <p className="text-xs text-muted-foreground font-medium bg-secondary/50 py-1 px-2 rounded-lg inline-block">
-                          Expertise: {brand.specialized}
+                        <p className="text-xs text-blue-600 font-medium bg-blue-50 py-1.5 px-3 rounded-full inline-block border border-blue-100">
+                          {brand.specialized}
                         </p>
                       </div>
                     </CardContent>
@@ -239,13 +258,13 @@ const Brands = () => {
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
-                <Badge className="mb-4 bg-accent text-accent-foreground hover:bg-accent">
+                <Badge className="mb-4 bg-primary text-primary-foreground hover:bg-primary/90">
                   Technical Insight
                 </Badge>
-                <h2 className="text-3xl font-display font-bold mb-4">
+                <h2 className="text-3xl font-display font-bold text-slate-900 mb-4">
                   Inverter vs. Non-Inverter Support
                 </h2>
-                <p className="text-muted-foreground mb-6 text-lg">
+                <p className="text-slate-600 mb-6 text-lg">
                   Modern brands like LG, Samsung, and Daikin use complex
                   PCB-driven Inverter technology. Unlike local mechanics, we use
                   diagnostic scanners to read error codes directly from these
@@ -259,7 +278,7 @@ const Brands = () => {
                     "Firmware Error Reset",
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-3">
-                      <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center">
+                      <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center shrink-0">
                         <CheckCircle className="w-4 h-4 text-green-600" />
                       </div>
                       <span className="font-medium text-slate-700">{item}</span>
@@ -267,18 +286,23 @@ const Brands = () => {
                   ))}
                 </ul>
               </div>
-              <div className="order-1 lg:order-2 bg-secondary/30 rounded-3xl p-8 border border-border flex flex-col items-center justify-center text-center">
-                <Cpu className="w-20 h-20 text-primary/20 mb-4" />
-                <p className="text-sm font-semibold text-muted-foreground mb-2">
-                  Technology Visualization
-                </p>
-                <div className="text-xs text-slate-400 italic mb-4">
-                  [Image of inverter AC PCB diagram]
+
+              {/* Visual Tech Representation */}
+              <div className="order-1 lg:order-2 bg-slate-50 rounded-3xl p-8 border border-slate-200 flex flex-col items-center justify-center text-center h-80 relative overflow-hidden group">
+                <div className="absolute inset-0 bg-grid-slate-200/[0.2] [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))]" />
+                <div className="relative z-10">
+                  <Cpu className="w-24 h-24 text-slate-300 mb-6 group-hover:text-primary transition-colors duration-500" />
+                  <h4 className="text-lg font-bold text-slate-700 mb-2">
+                    Smart PCB Diagnostics
+                  </h4>
+                  <p className="text-sm text-slate-500 max-w-xs mx-auto">
+                    We understand the complex electronics inside your{" "}
+                    <span className="text-primary font-bold">
+                      {filteredBrands[0]?.name || "AC"}
+                    </span>{" "}
+                    unit.
+                  </p>
                 </div>
-                <p className="text-sm text-muted-foreground max-w-xs">
-                  We understand the complex electronics inside your{" "}
-                  {filteredBrands[0]?.name || "Brand"} AC.
-                </p>
               </div>
             </div>
           </div>
@@ -291,7 +315,7 @@ const Brands = () => {
               Why Brand-Specific Service Matters?
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
+              <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
                 <ShieldCheck className="w-10 h-10 text-green-400 mx-auto mb-4" />
                 <h3 className="font-bold text-lg mb-2">Warranty Protection</h3>
                 <p className="text-slate-400 text-sm">
@@ -299,7 +323,7 @@ const Brands = () => {
                   valid (where applicable).
                 </p>
               </div>
-              <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
+              <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
                 <Zap className="w-10 h-10 text-yellow-400 mx-auto mb-4" />
                 <h3 className="font-bold text-lg mb-2">Original Spares</h3>
                 <p className="text-slate-400 text-sm">
@@ -307,7 +331,7 @@ const Brands = () => {
                   sensors.
                 </p>
               </div>
-              <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
+              <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
                 <Cpu className="w-10 h-10 text-blue-400 mx-auto mb-4" />
                 <h3 className="font-bold text-lg mb-2">Error Code Decoding</h3>
                 <p className="text-slate-400 text-sm">
@@ -320,20 +344,20 @@ const Brands = () => {
         </section>
 
         {/* CTA */}
-        <section className="py-16 bg-accent text-accent-foreground">
+        <section className="py-16 bg-blue-600 text-white">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-display font-bold mb-4">
               Book a Specialist for Your Brand
             </h2>
-            <p className="text-accent-foreground/80 mb-8">
+            <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
               Tell us your AC brand and model, and we'll send a technician
-              carrying the right tools.
+              carrying the right tools for that specific manufacturer.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a href="tel:+918220915207">
                 <Button
                   size="lg"
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-14 px-8 shadow-xl transition-all hover:scale-105"
+                  className="bg-white text-blue-600 hover:bg-blue-50 font-bold h-14 px-8 shadow-xl transition-transform hover:scale-105"
                 >
                   <Phone className="w-5 h-5 mr-2" />
                   Call Expert Now
@@ -344,8 +368,7 @@ const Brands = () => {
                 <Button
                   size="lg"
                   variant="outline"
-                  // FIX: Added 'bg-transparent' and 'border-2' so it's not invisible
-                  className="bg-transparent border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary font-bold h-14 px-8 transition-all hover:scale-105"
+                  className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 font-bold h-14 px-8 transition-transform hover:scale-105"
                 >
                   Book Online
                 </Button>
