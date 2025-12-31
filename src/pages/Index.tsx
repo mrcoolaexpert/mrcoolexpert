@@ -207,8 +207,10 @@ const Index = () => {
                           <Link
                             to="/services"
                             className="text-accent font-semibold hover:underline text-sm flex items-center"
+                            aria-label="Learn more about our AC repair services"
                           >
-                            Learn More <ArrowRight className="w-4 h-4 ml-1" />
+                            View Our AC Services{" "}
+                            <ArrowRight className="w-4 h-4 ml-1" />
                           </Link>
                         </CardContent>
                       </Card>
