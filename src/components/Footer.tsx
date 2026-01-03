@@ -210,7 +210,7 @@ const Footer = () => {
           <p className="text-xs">
             Developed and Maintained by{" "}
             <a
-              href="https://alkjtechnologies.vercel.app/"
+              href="https://alkjtech.in/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white-600 hover:text-white-800 transition-colors duration-200 font-medium"
